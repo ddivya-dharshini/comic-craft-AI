@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ComicCraft - AI Comic Story Creator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>🎨 ComicCraft</h1>
+            <p>Turn your ideas into comic stories with AI</p>
+        </header>
+
+        <!-- API Key Section -->
+        <section class="api-section" id="apiSection">
+            <h2>🔑 Enter Your Gemini API Key</h2>
+            <p class="hint">Get a free key from <a href="https://aistudio.google.com/apikey" target="_blank">Google AI Studio</a></p>
+            <div class="api-input-group">
+                <input type="password" id="apiKeyInput" placeholder="Paste your API key here...">
+                <button id="saveApiKeyBtn">Save Key</button>
+            </div>
+            <p class="api-status" id="apiStatus"></p>
+        </section>
+
+        <!-- Story Input Section -->
+        <section class="story-section">
+            <h2>📝 Describe Your Comic Story</h2>
+            <textarea id="storyPrompt" placeholder="Example: A brave cat astronaut discovers a planet made of cheese..."></textarea>
+           
+            <div class="options">
+                <label>
+                    Art Style:
+                    <select id="artStyle">
+                        <option value="comic book style, bold outlines, vibrant colors">Classic Comic</option>
+                        <option value="manga style, black and white, screentones">Manga</option>
+                        <option value="watercolor, soft colors, children's book illustration">Watercolor</option>
+                        <option value="pixel art, retro video game style">Pixel Art</option>
+                        <option value="noir, black and white, dramatic shadows">Noir</option>
+                    </select>
+                </label>
+               
+                <label>
+                    Number of Scenes:
+                    <select id="sceneCount">
+                        <option value="2">2 Scenes</option>
+                        <option value="3" selected>3 Scenes</option>
+                        <option value="4">4 Scenes</option>
+                    </select>
+                </label>
+            </div>
+
+            <button id="generateBtn" class="generate-btn">✨ Generate Comic</button>
+        </section>
+
+        <!-- Loading Indicator -->
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p id="loadingText">Generating your comic story...</p>
+        </div>
+
+        <!-- Output Section -->
+        <section id="output" class="output-section hidden">
+            <h2>📖 Your Comic Story</h2>
+            <div id="storyTitle" class="story-title"></div>
+            <div id="comicPanels" class="comic-panels"></div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
